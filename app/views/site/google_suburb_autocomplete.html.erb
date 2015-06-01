@@ -1,0 +1,14 @@
+<h1>Google Autocomplete</h1>
+<%= label_tag :suburb, "Enter a Suburb: " %>
+<%= text_field_tag :suburb, nil, id: 'js-google-autocomplete-suburb', style: 'width: 300px' %>
+
+<script type="text/javascript">
+$(function() {
+    var input = document.getElementById('js-google-autocomplete-suburb');
+    var options = {
+      types: ['(cities)'],
+      componentRestrictions: {country: 'au'}
+    };
+    autocomplete = new google.maps.places.Autocomplete(input, options);
+});
+</script>
